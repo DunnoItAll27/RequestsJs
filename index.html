@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Demo :: HttpRequestsJs</title>
+    <meta name="description" content="MsfPt :: Demo :: HttpRequestsJs">
+    <meta name="keywords" content="msfpt, http, requests, request, javascript, js">
+  </head>
+  <body>
+    <script async src="./requests.min.js"></script>
+    <a href="javascript: send_request();" rel="send-request">Send Request</a>
+    <script>
+      const send_request = event => {
+        new $request('./README.md', {
+          method: 'GET',
+          success: (response, status) => {
+            console.log("Response: " + response);
+            alert(response);
+            console.log("Status: " + status);
+          },
+          error: error => {
+            console.error(error);
+          }
+        });
+      }
+    </script>
+    <style>
+      body {
+        background: #F5F5F5;
+        margin: 0;
+        padding: 0;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+      }
+      a[rel="send-request"] {
+        display: block;
+        text-decoration: none;
+        color: #000;
+        font-size: 16px;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-weight: bold;
+        letter-spacing: 0.4px;
+        outline: none;
+        border: 2px solid #111;
+        border-radius: 7px;
+        padding: 15px 17px;
+        transition: all .2s ease-in-out;
+        box-shadow: 1px 1px 7px rgba(50 50 50 / 60%);
+      }
+      a[rel="send-request"]:hover {
+        background: #111;
+        color: #F5F5F5;
+      }
+      a[rel="send-request"]:active {
+        transform: scale(1.01);
+      }
+    </style>
+  </body>
+</html>
