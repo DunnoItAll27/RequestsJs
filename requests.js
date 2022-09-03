@@ -19,7 +19,7 @@ class $request {
         }
 
         this.url = url;
-        this.method = data.method == 'POST' ? 'POST' : 'GET';
+        this.method = data.method ? data.method : 'GET';
         this.header = data.header;
         this.params = data.params;
         this.success = data.success;
