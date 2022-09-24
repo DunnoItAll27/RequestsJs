@@ -22,8 +22,8 @@ class $request {
         this.method = data.method ? data.method : 'GET';
         this.header = data.header;
         this.params = data.params;
-        this.success = data.success;
-        this.error = data.error;
+        this.success = data.success ? data.success : (response, status) => { };
+        this.error = data.error ? data.error : (error) => { };
 
         if (!this.isValidURL(this.url)) {
             // console.warn("URL is not correct!");
@@ -63,7 +63,7 @@ class $request {
                     }
                     this.httpRequest.send(parameters.join('&'));
                 }
-            } catch (error) {                
+            } catch (error) {
                 this.httpRequest.send(null);
             }
 
