@@ -1,8 +1,5 @@
 
-/************************************************************
- *                      Coded By MsfPt                      *
- *   this on Github : https://msfpt.github.io/RequestsJs    *
- ************************************************************/
+/* Coded By https://github.com/msfpt */
 
 class $request {
     constructor(url, data = { method, params: {}, header: {}, success: (response, status) => { }, error: (error) => { } }) {
