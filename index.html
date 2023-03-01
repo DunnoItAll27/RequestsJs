@@ -12,7 +12,7 @@
     <a href="javascript: send_request();" rel="send-request">Send Request</a>
     <script>
       const send_request = event => {
-        new $request('https://api.myip.com/', {
+        new $request('./LICENSE', {
           method: 'GET',
           success: (response, status) => {
             console.log("Response: " + response);
